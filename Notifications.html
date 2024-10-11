@@ -1,0 +1,268 @@
+<html><head>
+<title>SocialSphere - Notifications</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+    }
+    header {
+        background-color: #1877f2;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+    }
+    main {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+        color: #1877f2;
+        margin-bottom: 20px;
+    }
+    .notification {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #e4e6eb;
+        transition: background-color 0.3s;
+    }
+    .notification:hover {
+        background-color: #f0f2f5;
+    }
+    .notification img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .notification-content {
+        flex-grow: 1;
+    }
+    .notification-content p {
+        margin: 0;
+    }
+    .notification-content .name {
+        font-weight: bold;
+        color: #1877f2;
+    }
+    .notification-content .time {
+        font-size: 12px;
+        color: #65676b;
+    }
+    .notification-icon {
+        width: 30px;
+        height: 30px;
+        background-color: #e4e6eb;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+    }
+    .unread {
+        background-color: #e7f3ff;
+    }
+    .unread::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #1877f2;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .load-more {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #f0f2f5;
+        border: none;
+        border-radius: 5px;
+        color: #1877f2;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+    .load-more:hover {
+        background-color: #e4e6eb;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">SocialSphere</a>
+            <div class="nav-links">
+                <a href="home.html
+                <a href="messages.html
+                <a href="notifications.html
+                <a href="profile.html
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Notifications</h1>
+        <div id="notifications-container">
+            <div class="notification unread">
+                <img src="dura 1.jfif" alt="Sarah Johnson's profile picture" width="50" height="50">
+                <div class="notification-content">
+                    <p><span class="name">Sarah Johnson</span> liked your post</p>
+                    <p class="time">2 minutes ago</p>
+                </div>
+                <div class="notification-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="notification">
+                <img src="dura 2.jfif" alt="Michael Lee's profile picture" width="50" height="50">
+                <div class="notification-content">
+                    <p><span class="name">Michael Lee</span> commented on your photo</p>
+                    <p class="time">1 hour ago</p>
+                </div>
+                <div class="notification-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="notification">
+                <img src="dura 3.jfif" alt="Emily Davis's profile picture" width="50" height="50">
+                <div class="notification-content">
+                    <p><span class="name">Emily Davis</span> sent you a friend request</p>
+                    <p class="time">3 hours ago</p>
+                </div>
+                <div class="notification-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                        <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <button class="load-more">Load More</button>
+    </main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const notificationsContainer = document.getElementById('notifications-container');
+    const loadMoreButton = document.querySelector('.load-more');
+    let notificationCount = 3;
+
+    loadMoreButton.addEventListener('click', function() {
+        const newNotifications = [
+            {
+                name: "Alex Wilson",
+                action: "tagged you in a post",
+                time: "5 hours ago",
+                icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>'
+            },
+            {
+                name: "Olivia Brown",
+                action: "shared your post",
+                time: "1 day ago",
+                icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>'
+            }
+        ];
+
+        newNotifications.forEach((notif, index) => {
+            const newNotification = document.createElement('div');
+            newNotification.className = 'notification';
+            newNotification.innerHTML = `
+                <img src="https://placekitten.com/${53 + notificationCount + index}/${53 + notificationCount + index}" alt="${notif.name}'s profile picture" width="50" height="50">
+                <div class="notification-content">
+                    <p><span class="name">${notif.name}</span> ${notif.action}</p>
+                    <p class="time">${notif.time}</p>
+                </div>
+                <div class="notification-icon">
+                    ${notif.icon}
+                </div>
+            `;
+            notificationsContainer.appendChild(newNotification);
+        });
+
+        notificationCount += newNotifications.length;
+
+        if (notificationCount >= 7) {
+            loadMoreButton.style.display = 'none';
+        }
+    });
+
+    // Mark notifications as read
+    notificationsContainer.addEventListener('click', function(e) {
+        const notification = e.target.closest('.notification');
+        if (notification) {
+            notification.classList.remove('unread');
+        }
+    });
+
+    // Simulate real-time notifications
+    setInterval(function() {
+        const randomActions = [
+            "liked your post",
+            "commented on your photo",
+            "shared your post",
+            "mentioned you in a comment",
+            "invited you to an event"
+        ];
+        const randomNames = [
+            "John Doe",
+            "Jane Smith",
+            "Robert Johnson",
+            "Lisa Anderson",
+            "Chris Taylor"
+        ];
+
+        const newNotification = document.createElement('div');
+        newNotification.className = 'notification unread';
+        const randomAction = randomActions[Math.floor(Math.random() * randomActions.length)];
+        const randomName = randomNames[Math.floor(Math.random() * randomNames.length)];
+        
+        newNotification.innerHTML = `
+            <img src="https://placekitten.com/${60 + notificationCount}/${60 + notificationCount}" alt="${randomName}'s profile picture" width="50" height="50">
+            <div class="notification-content">
+                <p><span class="name">${randomName}</span> ${randomAction}</p>
+                <p class="time">Just now</p>
+            </div>
+            <div class="notification-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                    <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                </svg>
+            </div>
+        `;
+
+        notificationsContainer.insertBefore(newNotification, notificationsContainer.firstChild);
+        notificationCount++;
+
+    }, 30000); // Add a new notification every 30 seconds
+});
+</script>
+</body></html>

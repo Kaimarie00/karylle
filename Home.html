@@ -1,0 +1,238 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+    }
+    header {
+        background-color: #1877f2;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+    }
+    main {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .profile-card, .trending, .post {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .profile-card img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+    .post-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+    .post-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+    .post-actions button {
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .trending-item {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .post {
+        margin-bottom: 20px;
+    }
+    .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .post-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .post-content {
+        margin-bottom: 10px;
+    }
+    .post-actions a {
+        color: #65676b;
+        text-decoration: none;
+        margin-right: 20px;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    .logo:hover {
+        animation: pulse 0.5s infinite;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">SocialSphere</a>
+            <div class="nav-links">
+                <a href="home.html"
+                <a href="messages.html"
+                <a href="notifications.html"
+                <a href="profile.html"
+            </div>
+        </nav>
+    </header>
+    <main>
+        <aside class="profile-card">
+            <img src="maria sasa5.jfif" alt="User profile picture of a cute kitten" width="100" height="100">
+            <h2>Jane Doe</h2>
+            <p>Web Developer | Cat Lover</p>
+            <p>Friends: 542 | Posts: 1,337</p>
+        </aside>
+        <section class="feed">
+            <div class="post">
+                <textarea class="post-input" placeholder="What's on your mind, Jane?"></textarea>
+                <div class="post-actions">
+                    <button>Post</button>
+                    <button>Add Photo</button>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <img src="papi 4.jfif" alt="John Smith's profile picture of a playful kitten" width="40" height="40">
+                    <h3>John Smith</h3>
+                </div>
+                <div class="post-content">
+                    <p>Just finished my first marathon! Feeling accomplished and exhausted. 🏃‍♂️🏅 #RunningCommunity</p>
+                </div>
+                <div class="post-actions">
+                    <a href="#">Like</a>
+                    <a href="#">Comment</a>
+                    <a href="#">Share</a>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <img src="dura 3.jfif" alt="Emily Chen's profile picture of a sleeping kitten" width="40" height="40">
+                    <h3>Emily Chen</h3>
+                </div>
+                <div class="post-content">
+                    <p>Excited to announce that I've just published my first novel! It's been a long journey, but I'm thrilled to share it with the world. 📚✨ #NewAuthor #BookLaunch</p>
+                </div>
+                <div class="post-actions">
+                    <a href="#">Like</a>
+                    <a href="#">Comment</a>
+                    <a href="#">Share</a>
+                </div>
+            </div>
+        </section>
+        <aside class="trending">
+            <h2>Trending Topics</h2>
+            <div class="trending-item">
+                <h3>#TechInnovation</h3>
+                <p>50.5K posts</p>
+            </div>
+            <div class="trending-item">
+                <h3>#SummerVibes</h3>
+                <p>32.1K posts</p>
+            </div>
+            <div class="trending-item">
+                <h3>#HealthyLiving</h3>
+                <p>28.7K posts</p>
+            </div>
+        </aside>
+    </main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const postButton = document.querySelector('.post-actions button');
+    const postInput = document.querySelector('.post-input');
+    const feed = document.querySelector('.feed');
+
+    postButton.addEventListener('click', function() {
+        if (postInput.value.trim() !== '') {
+            const newPost = document.createElement('div');
+            newPost.className = 'post';
+            newPost.innerHTML = `
+                <div class="post-header">
+                    <img src="dura 2.jfif" alt="Jane Doe's profile picture" width="40" height="40">
+                    <h3>Jane Doe</h3>
+                </div>
+                <div class="post-content">
+                    <p>${postInput.value}</p>
+                </div>
+                <div class="post-actions">
+                    <a href="#">Like</a>
+                    <a href="#">Comment</a>
+                    <a href="#">Share</a>
+                </div>
+            `;
+            feed.insertBefore(newPost, feed.children[1]);
+            postInput.value = '';
+        }
+    });
+
+    // Add hover effect to posts
+    feed.addEventListener('mouseover', function(e) {
+        if (e.target.closest('.post')) {
+            e.target.closest('.post').style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        }
+    });
+
+    feed.addEventListener('mouseout', function(e) {
+        if (e.target.closest('.post')) {
+            e.target.closest('.post').style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        }
+    });
+
+    // Simulate real-time updates
+    setInterval(function() {
+        const trendingItems = document.querySelectorAll('.trending-item p');
+        trendingItems.forEach(item => {
+            const currentPosts = parseInt(item.textContent);
+            const newPosts = currentPosts + Math.floor(Math.random() * 100);
+            item.textContent = newPosts + ' posts';
+        });
+    }, 5000);
+});
+</script>
+</body></html>

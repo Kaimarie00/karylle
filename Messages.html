@@ -1,0 +1,308 @@
+<html><head>
+<title>SocialSphere - Messages</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f2f5;
+        color: #1c1e21;
+    }
+    header {
+        background-color: #1877f2;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+    }
+    main {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .conversations, .chat-window {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .conversation {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .conversation:hover {
+        background-color: #f0f2f5;
+    }
+    .conversation img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .conversation-info {
+        flex-grow: 1;
+    }
+    .conversation-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .conversation-preview {
+        color: #65676b;
+        font-size: 0.9em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .chat-header {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    .chat-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    .chat-messages {
+        height: 400px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+    }
+    .message {
+        max-width: 70%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 18px;
+        line-height: 1.4;
+    }
+    .message.sent {
+        background-color: #0084ff;
+        color: white;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+    .message.received {
+        background-color: #e4e6eb;
+        color: #1c1e21;
+    }
+    .chat-input {
+        display: flex;
+        align-items: center;
+    }
+    .chat-input input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        margin-right: 10px;
+    }
+    .chat-input button {
+        background-color: #1877f2;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    @keyframes typing {
+        0% { opacity: 0.3; }
+        50% { opacity: 1; }
+        100% { opacity: 0.3; }
+    }
+    .typing-indicator {
+        display: flex;
+        padding: 10px;
+    }
+    .typing-indicator span {
+        height: 8px;
+        width: 8px;
+        background-color: #93959a;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 5px;
+        animation: typing 1s infinite;
+    }
+    .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">SocialSphere</a>
+            <div class="nav-links">
+                <a href="home.html"
+                <a href="messages.html"
+                <a href="notifications.html"
+                <a href="profile.html"
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="conversations">
+            <h2>Conversations</h2>
+            <div class="conversation" data-contact="john">
+                <img src="dura 1.jfif" alt="John Smith's profile picture of a playful kitten" width="50" height="50">
+                <div class="conversation-info">
+                    <div class="conversation-name">John Smith</div>
+                    <div class="conversation-preview">Hey, how's it going?</div>
+                </div>
+            </div>
+            <div class="conversation" data-contact="emily">
+                <img src="dura 2.jfif" alt="Emily Chen's profile picture of a sleeping kitten" width="50" height="50">
+                <div class="conversation-info">
+                    <div class="conversation-name">Emily Chen</div>
+                    <div class="conversation-preview">Thanks for the book recommendation!</div>
+                </div>
+            </div>
+            <div class="conversation" data-contact="michael">
+                <img src="dura 2.jfif" alt="Michael Johnson's profile picture of a curious kitten" width="50" height="50">
+                <div class="conversation-info">
+                    <div class="conversation-name">Michael Johnson</div>
+                    <div class="conversation-preview">Are we still on for lunch tomorrow?</div>
+                </div>
+            </div>
+        </section>
+        <section class="chat-window">
+            <div class="chat-header">
+                <img src="dura 3.jfif" alt="John Smith's profile picture of a playful kitten" width="40" height="40">
+                <h2>John Smith</h2>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    Hey, how's it going?
+                </div>
+                <div class="message sent">
+                    Hi John! I'm doing well, thanks for asking. How about you?
+                </div>
+                <div class="message received">
+                    I'm great! Just finished a big project at work. Feeling accomplished!
+                </div>
+                <div class="message sent">
+                    That's awesome! Congratulations on completing the project. We should celebrate sometime!
+                </div>
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button>Send</button>
+            </div>
+        </section>
+    </main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const conversations = document.querySelectorAll('.conversation');
+    const chatHeader = document.querySelector('.chat-header');
+    const chatMessages = document.querySelector('.chat-messages');
+    const chatInput = document.querySelector('.chat-input input');
+    const sendButton = document.querySelector('.chat-input button');
+
+    conversations.forEach(conversation => {
+        conversation.addEventListener('click', function() {
+            const contactName = this.querySelector('.conversation-name').textContent;
+            const contactImage = this.querySelector('img').src;
+            
+            chatHeader.innerHTML = `
+                <img src="${contactImage}" alt="${contactName}'s profile picture" width="40" height="40">
+                <h2>${contactName}</h2>
+            `;
+            
+            chatMessages.innerHTML = ''; // Clear existing messages
+            
+            // Add some sample messages
+            chatMessages.innerHTML += `
+                <div class="message received">
+                    Hey there! How are you?
+                </div>
+                <div class="message sent">
+                    Hi ${contactName}! I'm doing great, thanks for asking. How about you?
+                </div>
+                <div class="message received">
+                    I'm good too! Just wanted to catch up. Any plans for the weekend?
+                </div>
+            `;
+            
+            // Scroll to the bottom of the chat
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    });
+
+    sendButton.addEventListener('click', sendMessage);
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (messageText) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', 'sent');
+            messageElement.textContent = messageText;
+            chatMessages.appendChild(messageElement);
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Simulate a reply after a short delay
+            setTimeout(() => {
+                const replyElement = document.createElement('div');
+                replyElement.classList.add('message', 'received');
+                replyElement.textContent = "That's interesting! Tell me more.";
+                chatMessages.appendChild(replyElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000 + Math.random() * 2000);
+        }
+    }
+
+    // Simulate typing indicator
+    setInterval(() => {
+        const typingIndicator = document.querySelector('.typing-indicator');
+        if (Math.random() > 0.7) {
+            typingIndicator.style.display = 'flex';
+            setTimeout(() => {
+                typingIndicator.style.display = 'none';
+            }, 2000 + Math.random() * 3000);
+        }
+    }, 5000);
+});
+</script>
+</body></html>
